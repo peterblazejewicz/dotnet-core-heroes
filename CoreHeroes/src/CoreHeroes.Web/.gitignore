@@ -198,3 +198,6 @@ FakesAssemblies/
 
 # deps
 wwwroot/lib
+
+# appsettings
+appsettings.*.json
