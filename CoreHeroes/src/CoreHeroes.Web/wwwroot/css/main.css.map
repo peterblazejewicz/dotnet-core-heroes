@@ -1,0 +1,12 @@
+{
+	"version": 3,
+	"file": "main.css",
+	"sources": [
+		"../scss/main.scss"
+	],
+	"sourcesContent": [
+		"body {\n    padding-top: 50px;\n    padding-bottom: 20px;\n}\n\n/* Wrapping element */\n/* Set some basic padding to keep content from hitting the edges */\n.body-content {\n    padding-left: 15px;\n    padding-right: 15px;\n}\n\n/* Set widths on the form inputs since otherwise they're 100% wide */\ninput,\nselect,\ntextarea {\n    max-width: 280px;\n}\n\n/* Carousel */\n.carousel-caption p {\n    font-size: 20px;\n    line-height: 1.4;\n}\n\n/* Make .svg files in the carousel display properly in older browsers */\n.carousel-inner .item img[src$=\".svg\"] {\n    width: 100%;\n}\n\n/* Hide/rearrange for smaller screens */\n@media screen and (max-width: 767px) {\n    /* Hide captions */\n    .carousel-caption {\n        display: none;\n    }\n}\n"
+	],
+	"names": [],
+	"mappings": "AAAA,AAAA,IAAI,CAAC;EACD,WAAW,EAAE,IAAI;EACjB,cAAc,EAAE,IAAI,GACvB;;AAED,sBAAsB;AACtB,mEAAmE;AACnE,AAAA,aAAa,CAAC;EACV,YAAY,EAAE,IAAI;EAClB,aAAa,EAAE,IAAI,GACtB;;AAED,qEAAqE;AACrE,AAAA,KAAK;AACL,AAAA,MAAM;AACN,AAAA,QAAQ,CAAC;EACL,SAAS,EAAE,KAAK,GACnB;;AAED,cAAc;AACd,AAAkB,iBAAD,CAAC,CAAC,CAAC;EAChB,SAAS,EAAE,IAAI;EACf,WAAW,EAAE,GAAG,GACnB;;AAED,wEAAwE;AACxE,AAAsB,eAAP,CAAC,KAAK,CAAC,GAAG,CAAA,AAAA,GAAC,EAAK,MAAM,AAAX,EAAa;EACnC,KAAK,EAAE,IAAI,GACd;;AAED,wCAAwC;AACxC,MAAM,CAAC,MAAM,MAAM,SAAS,EAAE,KAAK;EAC/B,mBAAmB;EACnB,AAAA,iBAAiB,CAAC;IACd,OAAO,EAAE,IAAI,GAChB"
+}

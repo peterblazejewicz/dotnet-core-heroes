@@ -4,10 +4,12 @@
   "version": "1.0.0",
   "main": "index.js",
   "devDependencies": {
+    "node-sass": "^4.5.2",
     "stylelint": "^7.10.1"
   },
   "scripts": {
-    "stylelint": "stylelint \"wwwroot/css/*.css\""
+    "stylelint": "stylelint \"wwwroot/scss/*.scss\"",
+    "build:scss": "node-sass --output wwwroot/css --source-map true --source-map-contents wwwroot/scss"
   },
   "keywords": [],
   "author": "",
