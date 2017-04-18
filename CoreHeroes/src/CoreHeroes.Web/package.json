@@ -3,9 +3,11 @@
   "private": true,
   "version": "1.0.0",
   "main": "index.js",
-  "devDependencies": {},
+  "devDependencies": {
+    "stylelint": "^7.10.1"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "stylelint": "stylelint \"wwwroot/css/*.css\""
   },
   "keywords": [],
   "author": "",
