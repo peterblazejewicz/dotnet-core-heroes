@@ -9,7 +9,7 @@
     "stylelint": "^7.10.1"
   },
   "scripts": {
-    "dist": "npm run clean && npm run copy && npm run build",
+    "dist": "npm run clean && npm run copy && npm run build && dotnet build",
     "build": "npm run build:scss",
     "build:scss": "node-sass --output wwwroot/css --source-map true --source-map-contents wwwroot/scss",
     "clean": "npm run clean:fonts && npm run clean:css",
@@ -17,7 +17,9 @@
     "clean:css": "rimraf wwwroot/css",
     "copy": "npm run copy:fonts",
     "copy:fonts": "cp -R node_modules/font-awesome/fonts wwwroot/",
-    "stylelint": "stylelint \"wwwroot/scss/*.scss\""
+    "stylelint": "stylelint \"wwwroot/scss/*.scss\"",
+    "postinstall": "dotnet restore",
+    "start": "npm run dist && dotnet run"
   },
   "keywords": [],
   "author": "",
