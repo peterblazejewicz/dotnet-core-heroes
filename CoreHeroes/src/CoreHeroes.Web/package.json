@@ -10,11 +10,14 @@
     "node-sass": "^4.5.2",
     "npm": "^4.5.0",
     "rimraf": "^2.6.1",
-    "stylelint": "^7.10.1"
+    "stylelint": "^7.10.1",
+    "webpack": "^2.4.1"
   },
   "scripts": {
     "dist": "npm run clean && npm run copy && npm run build && dotnet build",
-    "build": "npm run build:scss",
+    "build": "npm run build:all",
+    "build:all": "npm run build:scss && npm run build:js",
+    "build:js": "npm run webpack",
     "build:scss": "node-sass --output wwwroot/css --source-map true --output-style expanded --source-map-contents scss",
     "build:scss:minified": "node-sass --output wwwroot/css --source-map true --output-style compressed --source-map-contents scss",
     "clean": "npm run clean:all",
@@ -29,7 +32,8 @@
     "stylelint": "stylelint \"wwwroot/scss/*.scss\"",
     "postinstall": "dotnet restore",
     "start": "npm run dist && dotnet run",
-    "serve": "cross-env ASPNETCORE_ENVIRONMENT=Development npm run start"
+    "serve": "cross-env ASPNETCORE_ENVIRONMENT=Development npm run start",
+    "webpack": "webpack --config ./webpack.config.js --progress"
   },
   "keywords": [],
   "author": "",
