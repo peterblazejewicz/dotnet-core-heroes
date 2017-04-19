@@ -196,8 +196,8 @@ FakesAssemblies/
 # Visual Studio 6 workspace options file
 *.opt
 
-# deps
-wwwroot/lib
+# wwwroot is built at runtime or during build process
+wwwroot
 
 # appsettings
 appsettings.*.json
