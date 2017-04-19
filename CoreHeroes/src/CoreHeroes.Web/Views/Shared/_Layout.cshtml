@@ -13,33 +13,36 @@
     </environment>
 </head>
 <body>
-    <nav class="navbar navbar-inverse navbar-fixed-top">
+    <nav class="navbar navbar-inverse bg-inverse navbar-toggleable-md fixed-top">
         <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">CoreHeroes.Web</a>
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
+            <button class="navbar-toggler navbar-toggler-right" 
+                type="button" 
+                data-toggle="collapse" 
+                data-target=".navbar-collapse" 
+                aria-controls="navbar-container" 
+                aria-expanded="true" 
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">CoreHeroes.Web</a>
+            <div class="navbar-collapse collapse" id="navbar-container" aria-expanded="false">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item"><a  class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" asp-area="" asp-controller="Home" asp-action="About">About</a></li>
+                    <li class="nav-item"><a class="nav-link" asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
                 </ul>
             </div>
         </div>
     </nav>
-    <div class="container body-content">
+    <div class="container">
         @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; 2017 - CoreHeroes.Web</p>
-        </footer>
     </div>
+    <footer>
+        <div class="container">
+            <hr />
+            <p>&copy; 2017 - CoreHeroes.Web</p>
+        </div>
+    </footer>
 
     <environment names="Development">
         <script src="~/js/site.js" asp-append-version="true"></script>
