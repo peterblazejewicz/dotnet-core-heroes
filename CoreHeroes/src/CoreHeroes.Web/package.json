@@ -5,11 +5,19 @@
   "main": "index.js",
   "devDependencies": {
     "node-sass": "^4.5.2",
+    "rimraf": "^2.6.1",
     "stylelint": "^7.10.1"
   },
   "scripts": {
-    "stylelint": "stylelint \"wwwroot/scss/*.scss\"",
-    "build:scss": "node-sass --output wwwroot/css --source-map true --source-map-contents wwwroot/scss"
+    "dist": "npm run clean && npm run copy && npm run build",
+    "build": "npm run build:scss",
+    "build:scss": "node-sass --output wwwroot/css --source-map true --source-map-contents wwwroot/scss",
+    "clean": "npm run clean:fonts && npm run clean:css",
+    "clean:fonts": "rimraf wwwroot/fonts",
+    "clean:css": "rimraf wwwroot/css",
+    "copy": "npm run copy:fonts",
+    "copy:fonts": "cp -R node_modules/font-awesome/fonts wwwroot/",
+    "stylelint": "stylelint \"wwwroot/scss/*.scss\""
   },
   "keywords": [],
   "author": "",
@@ -17,6 +25,7 @@
   "description": "",
   "dependencies": {
     "bootstrap": "4.0.0-alpha.6",
+    "font-awesome": "^4.7.0",
     "jquery-validation": "^1.16.0",
     "jquery-validation-unobtrusive": "^3.2.6"
   }
