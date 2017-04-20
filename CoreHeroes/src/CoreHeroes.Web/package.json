@@ -42,6 +42,7 @@
   "dependencies": {
     "bootstrap": "4.0.0-alpha.6",
     "font-awesome": "^4.7.0",
+    "holderjs": "^2.9.4",
     "jquery-validation": "^1.16.0",
     "jquery-validation-unobtrusive": "^3.2.6"
   }

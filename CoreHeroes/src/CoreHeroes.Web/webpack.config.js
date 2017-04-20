@@ -14,7 +14,9 @@ const config = {
             $: 'jquery',
             jquery: 'jquery',
             Tether: 'tether',
-            'window.Tether': 'tether'})
+            'window.Tether': 'tether',
+            'window.Holder': 'holderjs'
+        })
   ]
 };
 module.exports = config
