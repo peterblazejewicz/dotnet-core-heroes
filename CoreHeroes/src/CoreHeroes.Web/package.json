@@ -9,6 +9,7 @@
     "install": "^0.8.8",
     "node-sass": "^4.5.2",
     "npm": "^4.5.0",
+    "postcss-cli": "^3.1.1",
     "rimraf": "^2.6.1",
     "stylelint": "^7.10.1",
     "webpack": "^2.4.1"
@@ -16,7 +17,7 @@
   "scripts": {
     "dist": "npm run clean && npm run copy && npm run build && dotnet build",
     "build": "npm run build:all",
-    "build:all": "npm run build:scss && npm run build:js",
+    "build:all": "npm run build:scss && npm run postcss:all && npm run build:js",
     "build:js": "npm run webpack",
     "build:scss": "node-sass --output wwwroot/css --source-map true --output-style expanded --source-map-contents Client/scss",
     "build:scss:minified": "node-sass --output wwwroot/css --source-map true --output-style compressed --source-map-contents Client/scss",
@@ -30,6 +31,10 @@
     "copy:assets": "copyfiles -u 2 Client/assets/*.* wwwroot && copyfiles -u 2 Client/assets/**/* wwwroot",
     "copy:fonts": "copyfiles -u 3 node_modules/font-awesome/fonts/*.* wwwroot/fonts",
     "stylelint": "stylelint \"Client//scss/*.scss\"",
+    "postcss": "npm run postcss:all",
+    "postcss:all": "npm run postcss:main && npm run postcss:home",
+    "postcss:main": "postcss --use autoprefixer -o wwwroot/css/main.css wwwroot/css/main.css --no-map.inline",
+    "postcss:home": "postcss --use autoprefixer -o wwwroot/css/home.css wwwroot/css/home.css --no-map.inline",
     "postinstall": "dotnet restore",
     "start": "npm run dist && dotnet run",
     "serve": "cross-env ASPNETCORE_ENVIRONMENT=Development npm run start",
