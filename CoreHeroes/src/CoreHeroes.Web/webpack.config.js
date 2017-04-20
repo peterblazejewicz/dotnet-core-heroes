@@ -1,8 +1,8 @@
 const webpack = require('webpack');
 const config = {
   entry: {
-    site: './js/site.js',
-    vendors: './js/vendors.js'
+    site: './Client/js/site.js',
+    vendors: './Client/js/vendors.js'
   },
   output: {
     filename: '[name].js',
