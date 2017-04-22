@@ -2,7 +2,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.Razor.TagHelpers;
 
-namespace CoreHeroes.Web.Bootstrap
+namespace CoreHeroes.Web.Bootstrap.Card
 {
     [HtmlTargetElement("card")]
     [RestrictChildren("card-header", "card-block")]
@@ -15,7 +15,6 @@ namespace CoreHeroes.Web.Bootstrap
             await output.GetChildContentAsync();
             output.TagName = "div";
             output.Attributes.Add("class", "card");
-            
             if(cardContext.Header != null) {
                 var header = new TagBuilder("h3");
                 header.AddCssClass("card-header");
